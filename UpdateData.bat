@@ -1,5 +1,5 @@
 :: *****************************************************************************
-:: UpdateData.bat  10/22/2019 
+:: UpdateData.bat  1/7/2020 - Update python to ArcPro version 
 :: Summary: Tacoma Permits Data Update
 ::
 :: Description: Update json data used for the Tacoma Permits App 
@@ -24,7 +24,8 @@ Echo Archiving current data ... >> %LogDir%%theDate%.log
 
 Echo Downloading data ... >> %LogDir%%theDate%.log
  ::Send standard output (1) & errors (2) to log file
-    C:\Python27\ArcGISx6410.7\python.exe \\Geobase-win\CED\GADS\R2018\R110\UpdateData\Data_Download.py 1>>%LogDir%%theDate%.log 2>&1
+    ::C:\Python27\ArcGISx6410.7\python.exe \\Geobase-win\CED\GADS\R2018\R110\UpdateData\Data_Download.py 1>>%LogDir%%theDate%.log 2>&1
+    "C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe" \\Geobase-win\CED\GADS\R2018\R110\UpdateData\Data_Download.py 1>>%LogDir%%theDate%.log 2>&1
 
 :: Record ending time
     time /T >> %LogDir%%theDate%.log
